@@ -1,0 +1,50 @@
+body {
+    background-color: #87c3c9;
+}
+
+label {
+    margin: auto;
+    display: block;
+    width: 10%;
+    padding: 3px;
+}
+
+button {
+    margin-left: 25%;
+    padding-top: 10px;
+    width: 50%;
+    margin-top: 3%;
+}
+
+.wid {
+    margin-top: 2%;
+    width: 60%;
+    margin: auto;
+}
+
+.g-recaptcha {
+    margin-top: 5%;
+    margin-left: 32%;
+}
+
+input[type="tel"], input[type="text"], input[type="email"], input[type="time"], input[type="date"] {
+    width: 50%;
+    margin: auto;
+}
+
+.cen {
+    margin: 10% auto;
+    color: #fff;
+    width: 50%;
+    height: 50%;
+    background-color: #2b949e;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.submited {
+    position: absolute;
+    margin-top: -94px;
+    margin-left: 14%;
+    width: 74%;
+}
