@@ -36,7 +36,7 @@ class CalendarController extends Controller
         $date_finishes = $request->date . " " . $request->time_finish;
         $date_carbon2 = new Carbon\Carbon(new DateTime($date_finishes));
         $date_full2 = $date_carbon2->subHours(2);
-        //dd($date_full2);
+        // dd($date_full2);
 
         $service = new Google_Service_Calendar($this->client);
 
@@ -52,10 +52,12 @@ class CalendarController extends Controller
             )],
             'attendees' => array(
                 array('email' => $request->email),
-
             ),
         ]);
-        $results = $service->events->insert($calendarId, $event);
+
+        $send_notifications = ['sendNotifications' => true];
+
+        $results = $service->events->insert($calendarId, $event, $send_notifications);
         session()->flash('success', 'You successfully added event in calendar!');
         return redirect()->back();
 
