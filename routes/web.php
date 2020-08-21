@@ -9,3 +9,4 @@ Route::get('/', function () {
 });
 
 Route::post('/submit-to-calendar', 'CalendarController@submit')->name('submit')->middleware(ProtectAgainstSpam::class);
+Route::get('/oauth', 'CalendarController@oauth');

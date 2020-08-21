@@ -5,7 +5,8 @@ body {
 label {
     margin: auto;
     display: block;
-    width: 10%;
+    width: 25%;
+    margin-left: 46%;
     padding: 3px;
 }
 

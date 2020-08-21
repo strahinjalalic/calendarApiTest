@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-signin-client_id" content="53973256354-uda7potqlmreidldkup6f898n1kitn3t.apps.googleusercontent.com">
 
         <title>Connect with Google Calendar</title>
 
@@ -39,30 +40,37 @@
                     @honeypot
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" placeholder="Enter your name" class="form-control">
+                        <input type="text" name="name" placeholder="Event name" class="form-control">
                     </div>
                     @error('name')
                         <div class="alert alert-danger wid">{{$message}}</div>
                     @enderror
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="Pattern: +xxx-xx-xxxxxxx" required pattern="+[0-9]{3}-[0-9]{2}-[0-9]{7}">
+                        <input type="tel" name="phone" class="form-control" placeholder="xxx-xxxxxxx" required pattern="[0-9]{3}-[0-9]{7}">
                     </div>
                     @error('phone')
                         <div class="alert alert-danger wid">{{$message}}</div>
                     @enderror
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Enter your email" class="form-control" required>
+                        <input type="email" name="email" placeholder="Enter attendee email" class="form-control" required>
                     </div>
                     @error('email')
                         <div class="alert alert-danger wid">{{$message}}</div>
                     @enderror
                     <div class="form-group">
-                        <label for="time">Time</label>
+                        <label for="time">Starting</label>
                         <input type="time" name="time" id="" class="form-control">
                     </div>
                     @error('time')
+                        <div class="alert alert-danger wid">{{$message}}</div>
+                    @enderror
+                    <div class="form-group">
+                        <label for="time_finish">Finishing</label>
+                        <input type="time" name="time_finish" id="" class="form-control">
+                    </div>
+                    @error('time_finish')
                         <div class="alert alert-danger wid">{{$message}}</div>
                     @enderror
                     <div class="form-group">
@@ -87,6 +95,7 @@
             </div>
         </div>
 
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
 </html>

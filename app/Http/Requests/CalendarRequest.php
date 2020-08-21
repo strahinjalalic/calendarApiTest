@@ -27,8 +27,9 @@ class CalendarRequest extends FormRequest
         return [
             'name' => 'required|min:2|max:25',
             'email' => 'required',
-            'phone' => 'required|min:15',
+            'phone' => 'required|min:11',
             'time' => 'required',
+            'time_finish' => 'required',
             'date' => 'required',
             'g-recaptcha-response' => new Captcha()
         ];
